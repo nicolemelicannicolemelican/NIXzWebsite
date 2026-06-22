@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap');
+
+@font-face {
+  font-family: 'Giaza';
+  src: url('fonts/Giaza.otf') format('opentype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(120, 20, 45, 0.12), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(120, 20, 45, 0.12), transparent 25%),
+    #29020a;
+  color: #f4d7de;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  padding: 40px;
+}
+
+.stars {
+  position: absolute;
+  font-size: 20px;
+  color: #f4d7de;
+  opacity: 0.9;
+  letter-spacing: 4px;
+}
+
+.top-right {
+  top: 20px;
+  right: 30px;
+}
+
+.bottom-left {
+  bottom: 45px;
+  left: 30px;
+}
+
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #f7dbe1;
+  font-size: 24px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(223, 137, 160, 0.16);
+  transition: 0.3s ease;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.login-box {
+  width: 360px;
+  min-height: 620px;
+  padding: 48px 34px 34px;
+  background: linear-gradient(180deg, rgba(61, 4, 17, 0.95), rgba(42, 2, 12, 0.97));
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border-radius: 28px;
+  border: 1px solid rgba(223, 137, 160, 0.18);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.03),
+    0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.login-box::before {
+  content: "🎀";
+  display: block;
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+
+.login-header {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px;
+  font-weight: 500;
+  color: #f6dce1;
+  margin-bottom: 6px;
+  line-height: 1;
+}
+
+.login-box h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 5px;
+  margin-bottom: 42px;
+  color: #bb8794;
+}
+
+.highlight1 {
+  font-family: 'Giaza', 'Cormorant Garamond', serif;
+  color: #d8a0ad;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+.password-container {
+  margin-bottom: 22px;
+}
+
+.password-container input {
+  width: 100%;
+  height: 54px;
+  padding: 0 20px;
+  border: 1px solid rgba(223, 137, 160, 0.22);
+  outline: none;
+  border-radius: 16px;
+  background: rgba(101, 28, 45, 0.45);
+  color: #f7e7eb;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.password-container input::placeholder {
+  color: rgba(222, 182, 192, 0.75);
+  letter-spacing: 1px;
+}
+
+#login-btn {
+  width: 90px;
+  height: 56px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(90deg, #b93761, #a91f4f);
+  color: #f9eef1;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 4px;
+  text-transform: lowercase;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(169, 31, 79, 0.22);
+  transition: 0.3s ease;
+}
+
+#login-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+#error-message {
+  margin-top: 14px;
+  min-height: 20px;
+  color: #f4a8ba;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.login-box::after {
+  content: "✦ nix ✦";
+  position: absolute;
+  left: 50%;
+  bottom: 34px;
+  transform: translateX(-50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: rgba(194, 132, 145, 0.8);
+  letter-spacing: 1px;
+  padding: 0 14px;
+  background: transparent;
+}
+
+.login-box {
+  overflow: hidden;
+}
+
+.login-box .password-container,
+.login-box #login-btn,
+.login-box #error-message {
+  position: relative;
+  z-index: 2;
+}
+
+.login-box::marker {
+  display: none;
+}
+
+/* decorative bottom lines */
+.login-box span {
+  display: none;
+}
+
+.login-box::before,
+.login-box::after {
+  z-index: 2;
+}
+
+.login-box .fake-line-left,
+.login-box .fake-line-right {
+  display: none;
+}
+
+/* bottom line effect */
+.login-box .bottom-decor {
+  display: none;
+}
+
+.login-box:has(#error-message) {
+  padding-bottom: 70px;
+}
+
+/* line decorations built with background */
+.login-box {
+  background-image:
+    linear-gradient(180deg, rgba(61, 4, 17, 0.95), rgba(42, 2, 12, 0.97)),
+    linear-gradient(rgba(192, 128, 144, 0.22), rgba(192, 128, 144, 0.22)),
+    linear-gradient(rgba(192, 128, 144, 0.22), rgba(192, 128, 144, 0.22));
+  background-repeat: no-repeat;
+  background-size:
+    100% 100%,
+    95px 1px,
+    95px 1px;
+  background-position:
+    0 0,
+    40px calc(100% - 41px),
+    calc(100% - 40px) calc(100% - 41px);
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+  }
+
+  .login-box {
+    width: 50%;
+    max-width: 340px;
+    min-height: 580px;
+    padding: 44px 24px 30px;
+  }
+
+  .login-header {
+    font-size: 48px;
+  }
+
+  .login-box h2 {
+    font-size: 20px;
+    letter-spacing: 3px;
+  }
+}

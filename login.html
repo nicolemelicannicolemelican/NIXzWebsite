@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Nix</title>
+  <link rel="stylesheet" href="login.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<a href="secondpage-icons.html" class="back-btn">←</a>
+
+  <div class="container">
+    <div class="stars top-right">✦ ✦ ✦</div>
+    <div class="stars bottom-left">✦ ✦ ✦</div>
+
+    <a href="index.html" class="back-btn">←</a>
+
+    <div class="login-box">
+      <div class="login-header">log in</div>
+      <h2><span class="highlight1">nix's</span> website</h2>
+
+      <div class="password-container">
+        <input type="password" id="password-input" placeholder="Enter Password...">
+      </div>
+
+      <button id="login-btn" onclick="checkPassword()">Login</button>
+      <p id="error-message"></p>
+    </div>
+  </div>
+
+  <script>
+    let attemptsLeft = 3;
+
+    function checkPassword() {
+      const passwordInput = document.getElementById("password-input");
+      const passwordValue = passwordInput.value;
+      const errorMessage = document.getElementById("error-message");
+      const loginButton = document.getElementById("login-btn");
+
+      if (attemptsLeft <= 0) {
+        errorMessage.innerText = "No more tries left.";
+        errorMessage.style.color = "pink";
+        passwordInput.disabled = true;
+        loginButton.disabled = true;
+        return;
+      }
+
+      if (passwordValue === "1234") {
+        window.location.href = "secondpage-icons.html";
+      } else {
+        attemptsLeft--;
+
+        if (attemptsLeft > 0) {
+          errorMessage.innerText = `Wrong password girlll.
+           You have ${attemptsLeft} attempt(s) left.`;
+          errorMessage.style.color = "pink";
+        } else {
+          errorMessage.innerText = "hmpp. no more tries left for you!";
+          errorMessage.style.color = "pink";
+          passwordInput.disabled = true;
+          loginButton.disabled = true;
+        }
+
+        passwordInput.value = "";
+        passwordInput.focus();
+      }
+    }
+
+    document.getElementById("password-input").addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        checkPassword();
+      }
+    });
+  </script>
+
+</body>
+</html>

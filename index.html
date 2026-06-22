@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>⋆.𐙚⋆Nix</title>
+  <link rel="icon" type="image/png" href="images/bowicon.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Allura&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="edge-decor">
+  <span class="ed ed1">✧</span>
+  <span class="ed ed2">♡</span>
+  <span class="ed ed3">☆</span>
+  <span class="ed ed4">✦</span>
+  <span class="ed ed5">♪</span>
+  <span class="ed ed6">୨୧</span>
+  <span class="ed ed7">✩</span>
+  <span class="ed ed8">♡</span>
+  <span class="ed ed9">✧</span>
+  <span class="ed ed10">☆</span>
+  <span class="ed ed11">♬</span>
+  <span class="ed ed12">✦</span>
+</div>
+
+  <div class="container">
+
+    <div class="stars top-right">✦ ✦ ✦</div>
+    <div class="stars bottom-left">✦ ✦ ✦</div>
+
+    <div class="decor star-right">☆</div>
+    <div class="decor bow-left">𝜗ৎ</div>
+    <div class="decor bow-right">𝜗ৎ</div>
+    <div class="decor kiss">💋</div>
+    <div class="decor star-left">☆</div>
+   
+    
+
+    <div class="decor sparkle sparkle1">✦</div>
+    <div class="decor sparkle sparkle2">✧</div>
+    <div class="decor sparkle sparkle3">♡</div>
+    <div class="decor sparkle sparkle4">✦</div>
+
+    <div class="content">
+      <h1>hiii, it’s <span class="nix-name">nix</span>!</h1>
+      <p class="welcome">welcome!</p>
+    </div>
+
+    <div class="bottom">
+      <p class="quote">
+        ────── ⋆⋅☆⋅⋆ ──────
+        The wound is the place where light enters you,
+        this too shall pass.
+        ────── ⋆⋅☆⋅⋆ ──────
+      </p>
+
+      <a href="login.html" class="continue-btn">continue ;</a>
+    </div>
+
+    <div id="desktop-clock">00:00 AM</div>
+
+  </div>
+
+  <script>
+    function updateClock() {
+      const clock = document.getElementById("desktop-clock");
+      const now = new Date();
+
+      let hours = now.getHours();
+      let minutes = now.getMinutes();
+      let ampm = hours >= 12 ? "PM" : "AM";
+
+      hours = hours % 12;
+      hours = hours ? hours : 12;
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+
+      clock.textContent = `${hours}:${minutes} ${ampm}`;
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+
+</body>
+</html>
